@@ -1,1 +1,7 @@
+shiny
+requests
 beautifulsoup4
+pandas
+torch
+transformers
+scikit-learn
