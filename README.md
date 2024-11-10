@@ -1,21 +1,36 @@
-# Smart-Search-Tool-For-Analytics-Vidhya-Courses
-# Goal
-To create a smart search tool that enables users to find relevant free courses on Analytics Vidhya’s platform quickly.
+# Smart Search Tool for Free Courses on Analytics Vidhya
+This project is a smart search tool designed to help users find the most relevant free courses on Analytics Vidhya’s platform based on their search queries. It leverages NLP techniques to match user queries with course titles, using a BERT (Bidirectional Encoder Representations from Transformers) model for high-quality search relevance.
 
-# Project Approach
-# Data Collection
-I began by scraping the free courses' titles and relevant metadata, such as course links and images, from Analytics Vidhya’s platform using BeautifulSoup.
+# Project Overview
+# Objective
+To develop a smart search tool that improves the course discovery experience for users, allowing them to find the most relevant courses based on their input.
 
-# Model Selection
-Originally, I used the Groq API for generating embeddings and conducting searches. However, I found the results less suitable, leading me to switch to a more refined solution using BERT (Bidirectional Encoder Representations from Transformers). I leveraged a pre-trained BERT model (bert-base-uncased from Hugging Face) for generating embeddings.
+# Key Features
+Data Collection: 
+Course titles, links, and images are scraped from Analytics Vidhya's free courses page.
+Embedding Generation: 
+Using the pre-trained bert-base-uncased model to generate embeddings for course titles and search queries.
+Relevance Ranking: 
+Computes cosine similarity between query and course title embeddings, ranking the courses by relevance.
+Real-Time Autocomplete: 
+Autocomplete suggestions based on course titles for an improved user experience.
+Interactive Interface: 
+Developed with Streamlit, offering a clean, user-friendly interface.
 
-# Relevance Matching
-To match user queries with relevant courses, I calculated cosine similarity between the user’s query embedding and the course title embeddings. This similarity score enables ranking courses based on relevance, ensuring the most suitable courses are shown first.
+# Implementation Details
+Data Collection: 
+Using BeautifulSoup to scrape course data from Analytics Vidhya’s platform.
+Model and Similarity Scoring:
+The bert-base-uncased model from Hugging Face was used to generate embeddings for course titles and search queries.
+Cosine similarity between the query embedding and course title embeddings helps rank courses by relevance.
+Streamlit Interface:
+A Streamlit application presents the course titles, images, and relevance scores dynamically in an easy-to-use layout.
+Deployment
+The project has been deployed using Hugging Face Spaces for public access and testing.
 
-# Interface
-The application uses both Streamlit and Shiny for flexible, user-friendly interfaces. These interfaces display course details dynamically, including title, image, link, and relevance score.Finally I can able to conclude that Shiny is more faster in retrieving the results and display those in more interactive way than StreamLit.
-
-# Deployment on Hugging Face Spaces
-I deployed the tool on Hugging Face Spaces, providing an accessible, visually appealing interface for public use, enhanced with custom CSS for style and responsiveness.
-
-BERT model : google-bert/bert-base-uncased
+# Setup and Usage
+Prerequisites
+Python 3.8+
+Streamlit
+Transformers library from Hugging Face
+BeautifulSoup for web scraping
